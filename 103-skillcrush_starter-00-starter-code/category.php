@@ -17,11 +17,9 @@ get_header(); ?>
 
 <section class="category-page">
 	<div class="main-content">
-		<?php if ( have_posts() : ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'content-category', get_post_format() ); ?>
-			<?php } ?>
-		<?php else: ?>
+		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+			<?php get_template_part( 'content', get_post_format() ); ?>
+		<?php endwhile; else : ?>
 			<article>
 				<h4>No posts found!</h4>
 			</article>
